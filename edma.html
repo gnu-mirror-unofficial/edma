@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (X11; I; Linux 2.0.34 i586) [Netscape]">
+   <TITLE>EDMA</TITLE>
+</HEAD>
+<BODY>
+
+<H1>
+<FONT FACE="Arial">EDMA Pages</FONT></H1>
+EDMA is the Entorno de Desarrollo Modular y Abierto, or in English the
+Open and Modular Development Environment. The name is in Spanish because
+EDMA has been developed by GPI (Grupo de Procesado de Imagen or Image Processing
+Group) at Vigos University, Spain.
+
+<P>EDMA's main features are listed below:
+
+<P><B>Component Architecture</B>
+
+<P>EDMA is a system similar to the Component Object Model (developed by
+Microsoft) or the System Object Model (created by IBM). This kind of system
+offers a component framework for developing applications, where the application
+is chopped into small pieces that are then combined. The difference between
+Componentware and classical modular programming is that such pieces of
+code are executable. This means that you can change parts of the applications
+without recompiling all the code. Componentware is a bit like a dynamically
+linked library; in fact a simple form for components is this kind of library.
+
+<P><B>Object Oriented</B>
+
+<P>As well as allowing developers to build their applications using components,
+EDMA offers object oriented facilities over this componetware framework.
+The programmer doesn't need to work with object orientation: EDMA applications
+can be written in C, with EDMA as an easy way to use dynamically linked
+libraries. But if the programmer wants to use the object-oriented facilities
+in EDMA, they will obtain a higher level of reuse.
+
+<P>In EDMA, classes are components and components are classes. That is,
+you can build a component, a library, with some code and treat it as a
+class, or you can build classes for your object model and store it in components
+that you can update late, without recompiling the entire application. The
+main difference between EDMA and other object-oriented systems is that
+EDMA makes all the operations dynamically, at run-time. In the object-oriented
+world, this means that you can make the most related operations such as
+multiple inheritance and virtual method override while your application
+is running.
+
+<P>All the classes, components, or code fragments (whatever you call them)
+installed in a system can be used by any application running in this system,
+improving code reusability. So, you can take any class registered in your
+system and use it as a base class for deriving new classes, without requiring
+the source code of the first one. For example, if you have installed a
+<TT>calendar</TT> class you can derive a new class from it, <TT>graphical_calendar</TT>,
+that uses the main code of the calendar class for calculations and adds
+code for graphical visualization. EDMA supports multiple inheritance, so,
+if you have installed another class <TT>widget</TT>, you can make a new
+class <TT>calendar_widget</TT> that inherits from <TT>calendar</TT> and
+<TT>widget</TT>. This is the kind of reuse that EDMA achieves.
+
+<P><B>Extension Systems</B>
+
+<P>EDMA provides a set of extension systems included to make the use of
+other technologies easy. EDMA wasn't developed as a substitution for any
+other system; EDMA was developed for making the most of such systems.
+
+<P>EDMA's extension systems allow one to use other systems from the same
+framework and in the same way. So, these extension systems allow developing
+wrappers for systems like Java, Guile, CORBA, or even ActiveX (the up side
+of COM). The main goal of the extension systems is to improve application
+development in the sense: "If there is some code that does that already,
+why don't we use it?"
+
+<P>Integrating other systems in EDMA can be difficult and depends on facilities
+to interface to them, as with any tool that tries to use other ones. We
+have developed a partial extension for using Java bytecodes from EDMA,
+and some simple Guile code to use EDMA functions from Scheme. Guile and
+CORBA integration are the main goals in this area.
+
+<P><B>Download</B>
+
+<P>The latest version of EDMA is 0.3r1 you can download it from <A HREF="http://wgpi.tsc.uvigo.es/~dyc/EDMASite">http://wgpi.tsc.uvigo.es/~dyc/EDMASite</A>.
+We are working in the 0.4 version that will improve the dynamic inheritance
+facilities of the system, as well as in the Guile and CORBA integration.
+See Open Task for more information on this.
+
+<P><B>Acknowledgements</B>
+
+<P>Danny Yee had corrected my english faults (except these lines) and revised
+this pages for make them comprehensive. Thanks very much.
+<BR>Laura Rodr&iacute;guez Gonz&aacute;lez had made some other suggestion
+for making this text undertanding.
+<BR>Richard Stallman for pointing me to Danny Yee
+<BR>&nbsp;
+<H3>
+Further Information<BR>
+
+<HR WIDTH="100%"></H3>
+<A HREF="docs/index.html">Documentation</A>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; Only spanish docs at the moment. We are working
+on translating them
+<BR><A HREF="opentasks/index.html">Open Tasks</A>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; There are several projects we'd like to have
+people work on.
+<BR><A HREF="notes/index.html">Tech Notes</A>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; Some technical notes about EDMA.
+
+<P>
+<HR WIDTH="100%">
+<BR>Return to<A HREF="../../home.htm"> GNU's home page</A>.
+
+<P>Please send FSF &amp; GNU inquiries &amp; questions to <A HREF="mailto:gnu@gnu.org">gnu@gnu.org</A>.
+There are also other ways to contact
+<BR>the FSF.
+
+<P>Please send comments on these web pages to <A HREF="mailto:webmaster@www.gnu.org">webmasters@www.gnu.org</A>,
+send other questions to
+<BR><A HREF="mailto:gnu@gnu.org">gnu@gnu.org</A>.
+
+<P>Copyright (C) 1997, 1998 Free Software Foundation, Inc., 59 Temple Place
+- Suite 330, Boston, MA
+<BR>02111, USA
+
+<P>Verbatim copying and distribution is permitted in any medium, provided
+this notice is preserved.
+
+<P>Updated: 23 Feb 1998 grat-w
+<BR>
+<HR WIDTH="100%">
+</BODY>
+</HTML>
