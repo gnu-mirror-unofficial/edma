@@ -1,0 +1,135 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (X11; I; Linux 2.0.34 i586) [Netscape]">
+   <TITLE>EDMA</TITLE>
+</HEAD>
+<BODY>
+
+<H2>
+Open Tasks for EDMA</H2>
+There is still a lot of work to do on EDMA. The system needs a lot of testing
+in order to correct bugs and extend facilities. We now list some of the
+tasks to be done. If you are interested in collaboration you can contact
+us at <A HREF="mailto:dmartin@tsc.uvigo.es">dmartin@tsc.uvigo.es</A>.
+
+<P><B>Main System</B>
+
+<P>This section covers tasks in the main EDMA system. This is being worked
+on mainly by David Mart&iacute;nez Oliveira, who wrote it.
+<UL>
+<LI>
+<B>On-demand Interface Load</B>: The current version loads all the interfaces
+when the system starts up. Future versions will load interface information
+only when objects are created.</LI>
+
+<LI>
+<B>Error Management</B>: This includes Multilanguage error message support
+and the full specification of the EMI subsystem.</LI>
+
+<LI>
+<B>Dynamic Object-Orientation</B>: This includes a more suitable interface
+for managing dynamical inheritance relationships, and SIU subsystem integration
+with the object-oriented facilities (SIU PROXIES of level 3). The final
+task in this area will be the specification of what we call Loosely Coupled
+Object Oriented Systems (LCOOS).</LI>
+
+<LI>
+<B>Dynamic Invocation Interface</B> to allow some languages to use EDMA</LI>
+
+<LI>
+<B>New primitives</B> such as <TT>clone</TT>, <TT>shallow_clone</TT>,...</LI>
+</UL>
+This modifications will form EDMA version 0.4.
+
+<P><B>Porting</B>
+
+<P>EDMA works on GNU/Linux systems as well as Windows 95 systems. We would
+like to port it to systems such as OS/2 and other Unix flavors. Any help
+towards this will be welcome.
+
+<P>Sergio Costas is working on porting EDMA to OS/2
+
+<P><B>Interpreted Systems</B>
+
+<P>There are three main projects here:
+<UL>
+<LI>
+<B>GUILIAN</B>: This project's goal is to create an interface to the GNU
+Guile extension language. This would allow Guile applications to use EDMA
+facilities and EDMA applications to use classes written in Guile.</LI>
+
+<LI>
+<B>JANE</B>: The same as GUILIAN but for the Java language. There is a
+simple and still incomplete version for Windows 95.</LI>
+
+<LI>
+<B>EVELIN</B>: This will be a C-like interpreted language with special
+constructors to use EDMA. The project includes an interpreter, a byte-code
+compiler and a virtual machine.</LI>
+</UL>
+<B>SIU Extensions</B>
+
+<P>Some tasks are oriented towards develop SIU PROXIES for using other
+technologies.
+
+<P>Interpreted systems fall in this section too.
+<UL>
+<LI>
+<B>FAYE</B>: EDMA remote object facilities. This system requires full pack/unpack
+code as well as bi-directional implementation, that is, you can use a remote
+object from your local system, but this remote object can't see local objects.</LI>
+
+<LI>
+<B>SHARON</B> and <B>PENNY</B>: This system will provided shared object
+and persistent object facilities for EDMA. There is no current development
+on this.</LI>
+
+<LI>
+<B>CONNIE</B>: This SIU extension will integrate CORBA with EDMA, allowing
+you to use CORBA objects from an EDMA application or EDMA objects from
+a CORBA application. There is no current development on this.</LI>
+</UL>
+<B>EDMA Classes</B>
+
+<P>This covers the development of EDMA classes for programmers' use.
+<UL>
+<LI>
+<B>PORTABLE/1</B>: This will be a set of low level classes which provide
+a portable interface to machines and operating systems, so as to make EDMA
+source code portable.</LI>
+
+<LI>
+<B>IRINA</B>: This will be a set of classes for Graphical User Interface
+development. The goal is to develop a powerful widget set that is fully
+customizable, that is, to bring EDMA dynamic facilities to GUIs.</LI>
+</UL>
+
+<HR WIDTH="100%">
+<BR>Return to<A HREF="/software/edma/edma.html"> EDMA's home page</A>.
+<BR>Return to<A HREF="/home.html"> GNU's home page</A>.
+
+<P>Please send FSF &amp; GNU inquiries &amp; questions to <A HREF="mailto:gnu@gnu.org">gnu@gnu.org</A>.
+There are also other ways to contact
+<BR>the FSF.
+
+<P>Please send comments on these web pages to <A HREF="mailto:webmaster@www.gnu.org">webmasters@www.gnu.org</A>,
+send other questions to
+<BR><A HREF="mailto:gnu@gnu.org">gnu@gnu.org</A>.
+
+<P>Copyright (C) 1997, 1998 Free Software Foundation, Inc., 59 Temple Place
+- Suite 330, Boston, MA
+<BR>02111, USA
+
+<P>Verbatim copying and distribution is permitted in any medium, provided
+this notice is preserved.
+
+<P>Updated:
+<!-- hhmts start -->
+ 4 Dec 1998 jonas
+<!-- hhmts end -->
+<BR>
+<HR WIDTH="100%">
+<BR>&nbsp;
+</BODY>
+</HTML>
