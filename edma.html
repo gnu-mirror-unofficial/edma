@@ -1,124 +1,249 @@
-<!-- saved from url=(0022)http://internet.e-mail -->
-<HTML>
-<HEAD>
-   <TITLE>GNU EDMA - GNU Project - Free Software Foundation (FSF)</TITLE>
-<META NAME="keywords" CONTENT="edma">
-</HEAD>
-<BODY>
-
-<H1>GNU EDMA</H1>
-<b>GNU EDMA</b> is the <i>Entorno de Desarrollo Modular y Abierto</i>, or in English the
-<i>Modular and Open Development Environment</i> (named MODE by <i>Russel Reed</i> in the first GNU/EDMA documentation translations). The name is in Spanish because <b>GNU EDMA</b> has been developed by GPI (Grupo de Procesado de Imagen or Image Processing Group) at Vigo University, Spain.
-<p>
-<b>GNU EDMA</b> provides an Object Oriented Component-Based development environment to build modular and evolving applications as well as highly reusable components. To achieve this, <b>GNU EDMA</b> shares features of OO programming languages and component based systems in a loosely coupled environment.
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <title>GNU EDMA - GNU Project - Free Software Foundation (FSF)</title>
+<meta NAME="keywords" CONTENT="edma">
+</head>
+<body>
+<h1>GNU EDMA</h1>
+<b>GNU EDMA</b> is the <i>Entorno de Desarrollo Modular y Abierto</i>,
+or in English the
+<i>Modular and Open Development Environment</i> (named MODE by <i>Russel
+Reed</i> in the first GNU/EDMA documentation translations). The name is
+in Spanish because <b>GNU EDMA</b> has been developed by GPI (Grupo de
+Procesado de Imagen or Image Processing Group) at Vigo University,
+Spain.
+<p><b>GNU EDMA</b> provides an Object Oriented Component-Based
+development
+environment to build modular and evolving applications as well as
+highly reusable components. To achieve this, <b>GNU EDMA</b> shares
+features of OO programming languages and component based systems in a
+loosely coupled environment.
+</p>
 <h3>News</h3>
 <ul>
-<li><b>May, 2002</b>:: 
-  <b>Released Beta 0.9.3</b>. The main changes are listed below:
-  <ul>
-    <li>
-      <b>API Change</b>. Now functions are named <i>edma_XXX</i> following GNU code standards.
-      New functions have been added.
-    </li>
-    <li>
-      <b>NameSpace</b>. Added basic support for namespaces. Now components can be
-      installed in different directories.
-    </li>
-    <li>
-      <b>Exceptions</b>. Added rudimentary exception support. Still in early development stage.
-    </li>
-    <li>
-      <b>Misc</b>. A lot of bug fixes, graphical tools updated, heavy code clean up.
-    </li>
-  </ul>
-</li>
-<li>
-  <b>May 2002</b> :: Web Pages at GNU finally updated.
-</li>
+  <li><b>June/July 2003</b>:: <b>CVS Releases up to Beta 0.11.5</b>.
+The main features are listed below:
+    <ul>
+      <li> <b>Dynamic SIU Proxies</b>.<br>
+Added Functions to dynamically attach/detach SIU Proxies to objects </li>
+      <li> <b>Low-Level Method Invocation</b>.<br>
+Added function to allow direct access to class methods. This interface
+will allow developers to improve performance in critical parts of their
+applications. </li>
+      <li> <b>Dynamic Invocation Interface</b>.<br>
+Added support to dynamically build object requests. This interface will
+provide a standard and type-safe way to invoke methods at the same time
+it provides a method invocation interface for strong-typing
+environments (like Java). </li>
+      <li> <b>New Primitives for Type-Safe Property access</b>.<br>
+The new API provides type-safe property access, so compilers can type
+check GNU/EDMA code. </li>
+      <li> <b>Misc</b>.<br>
+More examples and Documentation added.<br>
+More Bug Fixes and Code Cleanup.<br>
+      </li>
+    </ul>
+  </li>
+  <p> </p>
+  <li><b>First Quarter 2003</b>:: <b>CVS Releases upto Beta 0.11.3</b>.
+The main changes are listed below:
+    <ul>
+      <li> <b>Cloning Primitives</b>. Shallow/Deep cloning working. </li>
+      <li> <b>MULTI_SERIALIZER Class</b>. This class serializes
+compound objects. </li>
+      <li> <b>Internal Structures Changed</b>. Object and Class
+internal structures have changed. </li>
+      <li> <b>Unit Tests</b>. First Unit tests added (work in
+progress). </li>
+      <li> <b>Run-Time Class Definition</b>. Added run-time class
+definition functions. </li>
+      <li><b>Many bug fixes</b>. </li>
+    </ul>
+  </li>
+  <p> </p>
+  <li><b>September, 2002</b>:: <b>CVS Release Beta 0.9.4</b>. The main
+changes are listed below:
+    <ul>
+      <li> <b>Multiversion Classes</b>. Now you can install various
+versions of the same component, even while applications are running. </li>
+      <li> <b>New SERIALIZER Class</b>. A serialization class was
+added. </li>
+      <li> <b>New Tools</b>. New tool for rapid development of
+multithreaded servers. </li>
+      <li> <b>Misc</b>. Bug fixes and minor updates on system classes.
+      </li>
+    </ul>
+  </li>
+  <p> </p>
+  <li><b>May, 2002</b>:: <b>Released Beta 0.9.3</b>. The main changes
+are listed below:
+    <ul>
+      <li> <b>API Change</b>. Now functions are named <i>edma_XXX</i>
+following GNU code standards. New functions have been added. </li>
+      <li> <b>NameSpace</b>. Added basic support for namespaces. Now
+components can be installed in different directories. </li>
+      <li> <b>Exceptions</b>. Added rudimentary exception support.
+Still in early development stage. </li>
+      <li> <b>Misc</b>. A lot of bug fixes, graphical tools updated,
+heavy code clean up. </li>
+    </ul>
+    <p>
+  </li>
+  <li> <b>May 2002</b> :: Web Pages at GNU finally updated. </li>
 </ul>
-
+<hr>
 <h3>GNU EDMA's main features</h3>
 <ul>
-  <li>
-    <b>OO Component-based Environment</b>: 
-    Seamlessly mixes component-based and Object Oriented programming models.
+  <li> <b>OO Component-based Environment</b>:
+    <p> Seamlessly mixes component-based and Object Oriented
+programming models. Components can be managed as classes (the same way
+that in any OO programming languages), or on an interface basis, as
+other component systems do. </p>
   </li>
-  <li>
-    <b>Dynamic OO features</b>:
-    All common OO features (inheritance, virtual method override,...) that you can find 
-    in any programming language can be done dynamically.
+  <li> <b>Dynamic OO features</b>:
+    <p> All common OO features (inheritance, virtual method
+override,...) that you can find in any programming language can be done
+dynamically. Object's inheritance hierarchy can be changed dynamically
+making it easier to build dynamically reconfigurable and evolvable
+applications. </p>
   </li>
-  <li>
-    <b>Classes or Objects</b>:
-    You can choose between conventional class-based programming models (C++, Smalltalk, Java) or 
-    prototype-based programming models (Self).
+  <li> <b>Classes or Objects</b>:
+    <p> You can choose between your preferred OO flavor for developing
+your application. </p>
+    <ul>
+      <li> <i>Destructive Subclassing</i> as in C++ or Java where
+superclass behaviors can be completely rewritten by subclasses </li>
+      <li> <i>Conservative Subclassing</i> as in Beta/gBeta where
+superclass behaviors can be only extended. </li>
+      <li> <i>Prototype-Based</i> as in Self where parents are shared
+classes and object prototypes are cloned. </li>
+    </ul>
+    <p> </p>
   </li>
-  <li>
-    <b>Reflection</b>:
-    Full reflection API.
+  <li> <b>Loosely-Coupled Architecture</b>:
+    <p> GNU/EDMA OOP features are implemented on a loosely-coupled
+basis which provides a clear separation between the analysis/design and
+implementation stages.</p>
+    <p> This approach allows the implementation of OO models even using
+non-OO programming languages and to use features not supported by the
+underlying environment (e.g. you can use multiple implementation
+inheritance in Java when working with GNU/EDMA components). </p>
   </li>
-  <li>
-    <b>Fully Extendable</b>:
-    Developed using C language. Built-in subsystem to extend internal functionalities.
+  <li> <b>Reflection</b>:
+    <p> Full reflection API. Dynamically extract any information about
+your classes and objects.</p>
+    <p> The reflection API along with the string-based object access
+interface makes <i>Object Automation</i> and the development of <i>Visual</i>
+tools trivial. </p>
   </li>
-  <li>
-    <b>Portable</b>:
-    Highly portable system. Target system just needs shared memory and libraries support.
+  <li> <b>Fully Extendable</b>:
+    <p> Developed in C. Built-in sub-systems to extend internal
+functionalities. </p>
+    <ul>
+      <li> <i>SIU Subsystem</i> allows to change the default behavior
+of the GNU/EDMA primitives. Its main target is integration of external
+systems. </li>
+      <li> <i>IngrIDF Subsystem</i> allows custom interface definition
+language parsers. </li>
+      <li> <i>EMI Subsystem</i> allows handling of exceptional
+situations in the system. At the moment it only can be used to build
+custom component/class loaders. </li>
+    </ul>
+    <p> </p>
   </li>
+<!--
+  <li> <b>Portable</b>:
+    <p> Highly portable system. Target system just needs shared memory
+and libraries support. </p>
+  </li>
+-->
 </ul>
-
-
+<hr>
 <h3>Open Tasks and Help Wanted</h3>
 <ul>
-  <li>
-    <b>Foundation Classes</b>:
-    Basic class hierarchy to deal with common tasks. OS interface, data structs,...
+  <li> <b>Foundation Classes</b>:
+    <p> Basic class hierarchy to deal with common tasks. OS interface,
+data structs,... </p>
   </li>
-  <li>
-    <b>Scripting</b>:
-    Scripting Language integration. Main target is <i>Guile</i>.
-    <i>Perl</i>, <i>Python</i>, <i>Ruby</i> are other desired targets.
+  <li> <b>Programming Language Support and Scripting</b>:
+    <p> Classes to allow development of GNU/EDMA components and
+applications using other languages than C.<br>
+Main target is <i>Guile</i>. <i>Perl (in progress)</i>, <i>Python
+(in progress)</i>, <i>Ruby</i> and <i>Java</i> are other desired
+targets. </p>
+    <p> These classes will also allow to access GNU/EDMA core from
+those programming language as well as use them as scripting language on
+any GNU/EDMA application. </p>
   </li>
-  <li>
-    <b>GNU Project</b>:
-    Integration with other GNU projects. 
+  <li> <b>System Integration</b>:
+    <p> One of the most important objectives of GNU/EDMA is to provide
+a common reuse framework, so integration of other technologies is one
+of the pursued targets. </p>
+    <ul>
+      <li> CORBA integration. Requires a DII/DSI aware ORB in order to
+exploit GNU/EDMA dynamic features </li>
+      <li> Component Models. It would be interesting to make GNU/EDMA
+work with current available component models (XPCOM, Bonobo, Qt
+Component Model, UNO,...) so they can be easily reused in a common
+fashion. </li>
+    </ul>
+    <p> </p>
+  </li>
+  <li> <b>GNU Project</b>:
+    <p> Integration with other GNU projects. </p>
     <ul>
       <li>GNUStep</li>
       <li>GNOME. Including Bonobo and ORBit</li>
+      <li>Guile as scripting language for GNU/EDMA applications</li>
     </ul>
+    <p> </p>
   </li>
-  <li>
-    <b>Documentation</b>:
-    Project documentation requires review by native english speakers.
+  <li> <b>Documentation</b>:
+    <p> Project documentation requires review by native english
+speakers. </p>
   </li>
-  <li>
-    <b>Propose your project</b>
-  </li>
+  <li> <b>Propose your project</b> </li>
 </ul>
-
+<hr>
 <h3>Download</h3>
 <ul>
-<b>GNU EDMA</b> is still in development.
-Current version is Beta 0.9.3 and you can get it 
-from cvs at <a href="http://savannah.gnu.org/projects/edma">savannah site</a>.
-<br>Previous stable version are now obsolete.
+  <b>GNU EDMA</b> is still in development.
+Current version is Beta 0.11.5 and you can get it from the cvs at <a
+ href="http://savannah.gnu.org/projects/edma">savannah</a>.
+  <br>
+Previous stable version are now obsolete.
 </ul>
-
+<hr>
 <h3>Documentation</h3>
+Documentation is available from CVS (gnuedma/corie/doc) and most of the
+texts require review by native english speakers.
+They will be added to this page when corrected.
+<p></p>
 <ul>
-  <li>
-    <b>Tutorials</b>:
+  <li> <b>Tutorials</b>:
     <ul>
-    <li>
-      Building GNU/EDMA Applications. (.texi)
-    </li>
-    <li>
-      Building GNU/EDMA Components. (.texi)
-    </li>
-    <li>
-      GNU/EDMA Inheritance. (.texi)
-    </li>
+      <li> <i>Building GNU/EDMA Applications. (.texi)</i>: Describes
+how to build simple applications using GNU/EDMA. </li>
+      <li> <i>Building GNU/EDMA Components. (.texi)</i>: Describes how
+to build GNU/EDMA components. </li>
+      <li> <i>GNU/EDMA for C/C++ Developers (.txt)</i>: Easy
+introduction to GNU/EDMA for C/C++ Developers explaining the simplest
+uses of the system </li>
+<!--
+      <li> <i>GNU/EDMA for Component Developers (.txt)</i>: Simple
+introduction to GNU/EDMA from the point of view of current component
+systems. </li>
+      <li> <i>GNU/EDMA Inheritance. (.texi)</i>: Introduction to the
+GNU/EDMA inheritance model. </li>
+      <li> <i>GNU/EDMA IngrIDF Parsers (.txt)</i>: Describes how to
+build your own IDF parsers. </li>
+      <li> <i>GNU/EDMA SIU Proxies (.txt)</i>: Describes how to build
+SIU Proxies and some simple applications of them. </li>
+      <li> <i>GNU/EDMA EMI Handlers. Writting ClassLoaders</i>:
+Describes how to write custom class loaders for your GNU/EDMA
+applications </li>
+-->
     </ul>
   </li>
 <!--
@@ -133,13 +258,11 @@ from cvs at <a href="http://savannah.gnu.org/projects/edma">savannah site</a>.
       </li>
     </ul>
   </li>
--->
-  <li>
+--><li>
     <b>Other</b>
     <ul>
-      <li> 
-        GNU/EDMA FAQ
-      </li>
+      <li> GNU/EDMA User Reference Manual (.txt): Still incomplete </li>
+      <li> GNU/EDMA FAQ (.html) </li>
 <!--
       <li>
         GNU EDMA Inheritance Model
@@ -160,48 +283,52 @@ from cvs at <a href="http://savannah.gnu.org/projects/edma">savannah site</a>.
     </ul>
   </li>
 </ul>
-
+<hr>
 <h3>Mailing Lists</h3>
 <ul>
-<P>There are three mailing lists about <b>GNU EDMA</b>. Visit <a href="http://savannah.gnu.org/projects/edma">Savannah</a>
+  <p>There are three mailing lists about <b>GNU EDMA</b>. Visit <a
+ href="http://savannah.gnu.org/projects/edma">Savannah</a>
 for information about them.
+  </p>
 </ul>
-
-<P><B>Acknowledgements</B>
+<hr>
+<p><b>Acknowledgements</b>
+</p>
 <ul>
-<P>Danny Yee helped me with the first version of this page.
-<BR>Laura Rodr&iacute;guez Gonz&aacute;lez made some other comments.
-<BR>Richard Stallman for pointing me to Danny Yee
-<br>Russel Reed for the first translations of the GNU/EDMA documentation.
-<br>Bev Corwin, Randal Shepard, Sabrina Mix for translating the old <i>Installation Guide</i> to English.
-<br>David Currie helped me with this current page.
+  <p>Danny Yee helped me with the first version of this page.
+  <br>
+Laura Rodr&iacute;guez Gonz&aacute;lez made some other comments.
+  <br>
+Richard Stallman for pointing me to Danny Yee
+  <br>
+Russel Reed for the first translations of the GNU/EDMA documentation.
+  <br>
+Bev Corwin, Randal Shepard, Sabrina Mix for translating the old <i>Installation
+Guide</i> to English.
+  <br>
+David Currie helped me with this current page.
+  </p>
 </ul>
 <hr>
-Return to the <a HREF="/home.html">GNU home page</a>.
-<p>
-
-Please send FSF &amp; GNU inquiries &amp; questions to
-
-<a HREF="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
-There are also <a HREF="/home.html#ContactInfo">other ways to
+Return to the <a href="file:///home.html">GNU home page</a>.
+<p>Please send FSF &amp; GNU inquiries &amp; questions to
+<a href="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
+There are also <a href="file:///home.html#ContactInfo">other ways to
 contact</a> the FSF.
-<p>
-
-Please send comments on these web pages to
-
-<a HREF="mailto:webmasters@www.gnu.org"><em>webmasters@www.gnu.org</em></a>,
+</p>
+<p>Please send comments on these web pages to
+<a href="mailto:webmasters@www.gnu.org"><em>webmasters@www.gnu.org</em></a>,
 send other questions to
-<a HREF="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
-<p>
-Copyright (C) 1998, 2001,2002 Free Software Foundation, Inc.,
-59 Temple Place - Suite 330, Boston, MA  02111,  USA
-<p>
-Verbatim copying and distribution of this entire article is
-permitted in any medium, provided this notice is preserved.<p>
-Updated:
-<!-- timestamp start -->
-$Date: 2002/05/26 19:11:50 $ $Author: dmartin $
-<!-- timestamp end -->
+<a href="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
+</p>
+<p>Copyright (C) 1998, 2001,2002 Free Software Foundation, Inc.,
+59 Temple Place - Suite 330, Boston, MA 02111, USA
+</p>
+<p>Verbatim copying and distribution of this entire article is
+permitted in any medium, provided this notice is preserved.</p>
+<p>Updated:
+<!-- timestamp start -->$Date: 2003/07/19 20:10:08 $ $Author: dmartin $
+<!-- timestamp end --></p>
 <hr>
-</BODY>
-</HTML>
+</body>
+</html>
