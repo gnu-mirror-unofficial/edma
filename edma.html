@@ -1,132 +1,206 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
 <HTML>
 <HEAD>
-   <TITLE>GNU EDMA</TITLE>
+   <TITLE>GNU EDMA - GNU Project - Free Software Foundation (FSF)</TITLE>
 <META NAME="keywords" CONTENT="edma">
 </HEAD>
 <BODY>
 
-<H1>
-<FONT FACE="Arial">GNU EDMA Pages</FONT></H1>
-GNU EDMA is the Entorno de Desarrollo Modular y Abierto, or in English the
-Open and Modular Development Environment. The name is in Spanish because
-GNU EDMA has been developed by GPI (Grupo de Procesado de Imagen or Image Processing
-Group) at Vigos University, Spain.
+<H1>GNU EDMA</H1>
+<b>GNU EDMA</b> is the <i>Entorno de Desarrollo Modular y Abierto</i>, or in English the
+<i>Modular and Open Development Environment</i> (named MODE by <i>Russel Reed</i> in the first GNU/EDMA documentation translations). The name is in Spanish because <b>GNU EDMA</b> has been developed by GPI (Grupo de Procesado de Imagen or Image Processing Group) at Vigo University, Spain.
+<p>
+<b>GNU EDMA</b> provides an Object Oriented Component-Based development environment to build modular and evolving applications as well as highly reusable components. To achieve this, <b>GNU EDMA</b> shares features of OO programming languages and component based systems in a loosely coupled environment.
 
-<P>GNU EDMA's main features are listed below:
+<h3>News</h3>
+<ul>
+<li><b>May, 2002</b>:: 
+  <b>Released Beta 0.9.3</b>. The main changes are listed below:
+  <ul>
+    <li>
+      <b>API Change</b>. Now functions are named <i>edma_XXX</i> following GNU code standards.
+      New functions have been added.
+    </li>
+    <li>
+      <b>NameSpace</b>. Added basic support for namespaces. Now components can be
+      installed in different directories.
+    </li>
+    <li>
+      <b>Exceptions</b>. Added rudimentary exception support. Still in early development stage.
+    </li>
+    <li>
+      <b>Misc</b>. A lot of bug fixes, graphical tools updated, heavy code clean up.
+    </li>
+  </ul>
+</li>
+<li>
+  <b>May 2002</b> :: Web Pages at GNU finally updated.
+</li>
+</ul>
 
-<P><B>Component Architecture</B>
+<h3>GNU EDMA's main features</h3>
+<ul>
+  <li>
+    <b>OO Component-based Environment</b>: 
+    Seamlessly mixes component-based and Object Oriented programming models.
+  </li>
+  <li>
+    <b>Dynamic OO features</b>:
+    All common OO features (inheritance, virtual method override,...) that you can find 
+    in any programming language can be done dynamically.
+  </li>
+  <li>
+    <b>Classes or Objects</b>:
+    You can choose between conventional class-based programming models (C++, Smalltalk, Java) or 
+    prototype-based programming models (Self).
+  </li>
+  <li>
+    <b>Reflection</b>:
+    Full reflection API.
+  </li>
+  <li>
+    <b>Fully Extendable</b>:
+    Developed using C language. Built-in subsystem to extend internal functionalities.
+  </li>
+  <li>
+    <b>Portable</b>:
+    Highly portable system. Target system just needs shared memory and libraries support.
+  </li>
+</ul>
 
-<P>GNU EDMA is a system similar to the Component Object Model (developed by
-Microsoft) or the System Object Model (created by IBM). This kind of system
-offers a component framework for developing applications, where the application
-is chopped into small pieces that are then combined. The difference between
-Componentware and classical modular programming is that such pieces of
-code are executable. This means that you can change parts of the applications
-without recompiling all the code. Componentware is a bit like a dynamically
-linked library; in fact a simple form for components is this kind of library.
 
-<P><B>Object Oriented</B>
+<h3>Open Tasks and Help Wanted</h3>
+<ul>
+  <li>
+    <b>Foundation Classes</b>:
+    Basic class hierarchy to deal with common tasks. OS interface, data structs,...
+  </li>
+  <li>
+    <b>Scripting</b>:
+    Scripting Language integration. Main target is <i>Guile</i>.
+    <i>Perl</i>, <i>Python</i>, <i>Ruby</i> are other desired targets.
+  </li>
+  <li>
+    <b>GNU Project</b>:
+    Integration with other GNU projects. 
+    <ul>
+      <li>GNUStep</li>
+      <li>GNOME. Including Bonobo and ORBit</li>
+    </ul>
+  </li>
+  <li>
+    <b>Documentation</b>:
+    Project documentation requires review by native english speakers.
+  </li>
+  <li>
+    <b>Propose your project</b>
+  </li>
+</ul>
 
-<P>As well as allowing developers to build their applications using components,
-GNU EDMA offers object oriented facilities over this componetware framework.
-The programmer doesn't need to work with object orientation: GNU EDMA applications
-can be written in C, with GNU EDMA as an easy way to use dynamically linked
-libraries. But if the programmer wants to use the object-oriented facilities
-in GNU EDMA, they will obtain a higher level of reuse.
+<h3>Download</h3>
+<ul>
+<b>GNU EDMA</b> is still in development.
+Current version is Beta 0.9.3 and you can get it 
+from cvs at <a href="http://savannah.gnu.org/projects/edma">savannah site</a>.
+<br>Previous stable version are now obsolete.
+</ul>
 
-<P>In GNU EDMA, classes are components and components are classes. That is,
-you can build a component, a library, with some code and treat it as a
-class, or you can build classes for your object model and store it in components
-that you can update late, without recompiling the entire application. The
-main difference between GNU EDMA and other object-oriented systems is that
-GNU EDMA makes all the operations dynamically, at run-time. In the object-oriented
-world, this means that you can make the most related operations such as
-multiple inheritance and virtual method override while your application
-is running.
+<h3>Documentation</h3>
+<ul>
+  <li>
+    <b>Tutorials</b>:
+    <ul>
+    <li>
+      Building GNU/EDMA Applications. (.texi)
+    </li>
+    <li>
+      Building GNU/EDMA Components. (.texi)
+    </li>
+    <li>
+      GNU/EDMA Inheritance. (.texi)
+    </li>
+    </ul>
+  </li>
+<!--
+  <li>
+    <b>Reference Manuals</b>
+    <ul>
+      <li>
+        GNU/EDMA API Reference Manual.
+      </li>
+      <li>
+        GNU/EDMA Internals.
+      </li>
+    </ul>
+  </li>
+-->
+  <li>
+    <b>Other</b>
+    <ul>
+      <li> 
+        GNU/EDMA FAQ
+      </li>
+<!--
+      <li>
+        GNU EDMA Inheritance Model
+      </li>
+      <li>
+        Mixin Programming with GNU/EDMA
+      </li>
+      <li>
+        Aspect Oriented Programming with GNU/EDMA
+      </li>
+      <li>
+        GNU/EDMA Hot Swapping
+      </li>
+      <li>
+        Distributed Multi Agent Based Systems with GNU/EDMA
+      </li>
+-->
+    </ul>
+  </li>
+</ul>
 
-<P>All the classes, components, or code fragments (whatever you call them)
-installed in a system can be used by any application running in this system,
-improving code reusability. So, you can take any class registered in your
-system and use it as a base class for deriving new classes, without requiring
-the source code of the first one. For example, if you have installed a
-<TT>calendar</TT> class you can derive a new class from it, <TT>graphical_calendar</TT>,
-that uses the main code of the calendar class for calculations and adds
-code for graphical visualization. GNU EDMA supports multiple inheritance, so,
-if you have installed another class <TT>widget</TT>, you can make a new
-class <TT>calendar_widget</TT> that inherits from <TT>calendar</TT> and
-<TT>widget</TT>. This is the kind of reuse that GNU EDMA achieves.
-
-<P><B>Extension Systems</B>
-
-<P>GNU EDMA provides a set of extension systems included to make the use of
-other technologies easy. GNU EDMA wasn't developed as a substitution for any
-other system; GNU EDMA was developed for making the most of such systems.
-
-<P>GNU EDMA's extension systems allow one to use other systems from the same
-framework and in the same way. So, these extension systems allow developing
-wrappers for systems like Java, Guile, CORBA, or even ActiveX (the up side
-of COM). The main goal of the extension systems is to improve application
-development in the sense: "If there is some code that does that already,
-why don't we use it?"
-
-<P>Integrating other systems in GNU EDMA can be difficult and depends on facilities
-to interface to them, as with any tool that tries to use other ones. We
-have developed a partial extension for using Java bytecodes from GNU EDMA,
-and some simple Guile code to use GNU EDMA functions from Scheme. Guile and
-CORBA integration are the main goals in this area.
-
-<P><B>Download</B>
-
-<p>GNU EDMA is still in development. Current version is Beta 0.7.2 and you can get it 
-from <a href="http://savannah.gnu.org/projects/edma">savannah site</a>.
-
-<P><B>Mailing Lists</B>
-
-<P>There're three mailing list about GNU EDMA. Visit <a href="http://savannah.gnu.org/projects/edma">Savannah</a>
+<h3>Mailing Lists</h3>
+<ul>
+<P>There are three mailing lists about <b>GNU EDMA</b>. Visit <a href="http://savannah.gnu.org/projects/edma">Savannah</a>
 for information about them.
+</ul>
 
 <P><B>Acknowledgements</B>
-
-<P>Danny Yee had corrected my english faults (except these lines) and revised
-this pages for make them comprehensive. Thanks very much.
-<BR>Laura Rodr&iacute;guez Gonz&aacute;lez had made some other suggestion
-for making this text undertanding.
+<ul>
+<P>Danny Yee helped me with the first version of this page.
+<BR>Laura Rodr&iacute;guez Gonz&aacute;lez made some other comments.
 <BR>Richard Stallman for pointing me to Danny Yee
-<BR>&nbsp;
-<H3>
-Further Information</h3>
+<br>Russel Reed for the first translations of the GNU/EDMA documentation.
+<br>Bev Corwin, Randal Shepard, Sabrina Mix for translating the old <i>Installation Guide</i> to English.
+</ul>
+<hr>
+Return to the <a HREF="/home.html">GNU home page</a>.
+<p>
 
-<HR WIDTH="100%">
-<A HREF="docs/index.html">Documentation</A>
-<BR>&nbsp;&nbsp;&nbsp;&nbsp; Only spanish docs at the moment. We are working
-on translating them
-<BR><A HREF="opentasks/index.html">Open Tasks</A>
-<BR>&nbsp;&nbsp;&nbsp;&nbsp; There are several projects we'd like to have
-people work on.
-<BR><A HREF="notes/index.html">Tech Notes</A>
-<BR>&nbsp;&nbsp;&nbsp;&nbsp; Some technical notes about EDMA.
+Please send FSF &amp; GNU inquiries &amp; questions to
 
-<P>
-<HR WIDTH="100%">
-<BR>Return to<A HREF="../../home.htm"> GNU's home page</A>.
+<a HREF="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
+There are also <a HREF="/home.html#ContactInfo">other ways to
+contact</a> the FSF.
+<p>
 
-<P>Please send FSF &amp; GNU inquiries &amp; questions to <A HREF="mailto:gnu@gnu.org">gnu@gnu.org</A>.
-There are also other ways to contact
-<BR>the FSF.
+Please send comments on these web pages to
 
-<P>Please send comments on these web pages to <A HREF="mailto:webmaster@www.gnu.org">webmasters@www.gnu.org</A>,
+<a HREF="mailto:webmasters@www.gnu.org"><em>webmasters@www.gnu.org</em></a>,
 send other questions to
-<BR><A HREF="mailto:gnu@gnu.org">gnu@gnu.org</A>.
-
-<P>Copyright (C) 1997, 1998 Free Software Foundation, Inc., 59 Temple Place
-- Suite 330, Boston, MA
-<BR>02111, USA
-
-<P>Verbatim copying and distribution is permitted in any medium, provided
-this notice is preserved.
-
-<P>Updated: 23 Feb 1998 grat-w
-<BR>
-<HR WIDTH="100%">
+<a HREF="mailto:gnu@gnu.org"><em>gnu@gnu.org</em></a>.
+<p>
+Copyright (C) 1998, 2001,2002 Free Software Foundation, Inc.,
+59 Temple Place - Suite 330, Boston, MA  02111,  USA
+<p>
+Verbatim copying and distribution of this entire article is
+permitted in any medium, provided this notice is preserved.<p>
+Updated:
+<!-- timestamp start -->
+$Date: 2002/05/26 19:08:44 $ $Author: dmartin $
+<!-- timestamp end -->
+<hr>
 </BODY>
 </HTML>
