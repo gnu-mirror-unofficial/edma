@@ -1,0 +1,286 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (X11; I; Linux 2.0.34 i586) [Netscape]">
+   <TITLE>EDMA</TITLE>
+</HEAD>
+<BODY>
+
+<H2>
+EDMA TechNotes</H2>
+In this section we provide some more technical information to help the
+reader to get a clearer idea of what EDMA is and how it works. We hope
+that this page will disappear in the future, replaced by more suitable
+tutorials on EDMA programming.
+
+<P><B>Main Architecture</B>
+
+<P>EDMA consists of three main elements: the class register, the class
+implementations and the class interfaces.
+
+<P>The class register is a simple text file that contains the information
+about all the classes available in your system. Any class that appears
+in this register can be used by any application.
+
+<P>Each class is formed by two files: an implementation file that contains
+the code of the class, the method that this class define, and an interface
+file that contains a text definition of the properties and methods defined
+by the class. The interface file is like .h files for C/C++ applications:
+it defines the variables and methods that the class uses. Actually it only
+defines the symbolic information required by the system for building the
+data block for an object of that class, and for linking the implementation
+of the class.
+
+<P>A first difference between EDMA and other systems is that there is no
+interface compiler. The classes' interfaces are processed at run-time and
+translated to an internal representation hidden to the outer world.
+
+<P>So to build an EDMA class you must provide an implementation for this
+class, the code associated to any method that the class defines, and an
+interface file that contains all the properties (variables) and methods
+(functions) that the class defines. And you must add the class to the register
+in order to make the new class available.
+
+<P>All the work is carried out by a single library called edma32.dll that
+you must to link to your applications in order to use the primitives that
+it defines.
+
+<P><B>Programming Interface</B>
+
+<P>Since all operations are done at run-time, no language binding is available.
+EDMA has been developed to work in the C language, and for other languages
+it is necessary to develop wrapper code. The next version will provide
+a CORBA-like dynamic invocation interface to allow the use of EDMA from
+languages that don't support variable parameter number functions.
+
+<P>If you don't want to use EDMA as an object-oriented system, you only
+need to know six primitives: <TT>NewObj</TT>, <TT>FreeObj</TT>, <TT>WProp3</TT>,
+<TT>RProp3</TT>, <TT>Met3</TT> and <TT>Met3S</TT>.
+
+<P>The first two allow you to create and destroy instances of some class,
+objects. If you aren't interested in object programming, you can consider
+the <TT>NewObj</TT> primitive a function that allocates some memory for
+storing data and brings to your application some code stored in a library,
+loading it if necessary. You don't need to tell the linker the libraries
+that you want to use: EDMA manages this.
+
+<P>The <TT>WProp3</TT> and <TT>RProp3</TT> primitives allow you to access
+the data block associated with the object. The first allows you to write
+to it and the second allows you to read from it.
+
+<P>The <TT>Met3</TT> and <TT>Met3S</TT> primitives allow you to execute
+code, some function defined in the library or class implementation. <TT>Met3S</TT>
+invokes a method with signature and is provided for defining polymorphic
+behaviors; this will not interest non-object-oriented programmers.
+
+<P>With these six primitives you can load libraries and use the code in
+them easily. You can make changes in the libraries without recompiling
+either the libraries (components/classes) that the application uses or
+the application itself.
+
+<P>You can update your applications by distributing new versions of individual
+components. If you use the reflection API of EDMA, you can look for new
+classes and add new functionalities to your application as add plug-ins,
+without any additional work.
+
+<P>We provide a simple example of how to invoke these primitives, but if
+you want to use EDMA you must to take a look at the examples in the distribution
+and read the documentation (if you know Spanish). This is an example of
+pseudocode for adding plug-ins to an application using EDMA.
+
+<P><TT>// Get a Plug-in name from some place. This must be a string</TT>
+
+<P><TT>// The NewObj primitive expects to get a string as parameter</TT>
+
+<P><TT>// for example NewObj("QuickTimeView",NULL);</TT>
+
+<P><TT>OBJID plug_in;</TT>
+
+<P><TT>PLUG_IN_STATUS status_var;</TT>
+
+<P><TT>plug_in=NewObj(plug_in_name,NULL);</TT>
+
+<P><TT>// We tell the plug-in that will be embedded in out main window</TT>
+
+<P><TT>WProp3 (plug_in,"Embeded",1);</TT>
+
+<P><TT>// We read the status of it</TT>
+
+<P><TT>Rprop3(plug_in,"Status",&amp;status_var);</TT>
+
+<P><TT>// We run the plugin</TT>
+
+<P><TT>Met3(plug_in,"Run");</TT>
+
+<P><TT>// We Free the plug-in</TT>
+
+<P><TT>FreeObj(plug_in);</TT>
+
+<P>Note that properties and methods are refered to by strings. Their names
+are defined in the interface file associated with the plug-in.
+
+<P><B>Object Oriented Facilities</B>
+
+<P>Now we look at the object-oriented facilities in EDMA. This is a difficult
+topic, so we only introduce some of the facilities. First we introduce
+some of the opportunities that dynamic object oriented facilities offer
+the programmer.
+<DL>You can add new subclasses and superclasses to an object at any time,
+which will change its behavior.
+
+<P>This allows to the programmer to build an object and specialize it later,
+when additional information is available. For example, you can create an
+object of class <TT>IMAGE</TT> and add a graphical decoder class when the
+user clicks on a button, changing the object of class <TT>IMAGE</TT> into
+an object of class <TT>IMAGE_JPG</TT>, <TT>IMAGE_PNG</TT>, ...
+
+<P>Changing superclasses in run-time is also allowed. For example, suppose
+you have some set of classes for image filtering: <TT>SHARPEN</TT>, <TT>BLUR</TT>,
+<TT>EMBOSS</TT>, etc. These classes are linear filters that inherit from
+a base class <TT>LINEAR_FILTER</TT>. When you create an object of one of
+these classes, EDMA will link the <TT>LINEAR_FILER</TT> class code to the
+object. The application may then look for MMX extensions on your machine,
+so you can add the normal <TT>LINEAR_FILTER</TT> class or a <TT>LINEAR_FILTER_MMX</TT>
+class instead.
+
+<P>You can override any virtual method on an object in order to exploit
+dynamical inheritance
+
+<P>This allows you to override a virtual method at any time, so you can
+get dynamic polymorphism. That is, the object can change its behavior with
+time. For example, imagine that you are developing a war game. You have
+a class that holds the AI of the machine player and in the main loop of
+the application you execute some method. You can develop "strategy" classes
+that are loaded by the computer player at run-time, overriding this method.
+An AI engine can determine which strategy to use at each moment, load the
+desired strategy class, and override the main loop method. The main loop
+method does not need to change.
+
+<P>EDMA class paths allow you to walk through the class diagram.
+
+<P>EDMA uses class paths to allow the programmer to move around the class
+diagram. A class path is a filesystem-like path. Any classes added to an
+object are treated as directories that contain properties, methods and
+other subdirectories. To access an item in these directories you need to
+indicate the relative path from your current location. There is a first
+implementation for a one-level interface of this that allows the programmer
+to access items by name without the full relative path, as in C++ or Java.
+The drawback of this solution is that name resolution is a bit slower than
+indicating the class path, because there are more comparisons to do.
+
+<P>EDMA supports on-demand inheritance.
+
+<P>To add new classes to an object, you must invoke special EDMA primitives
+that are a bit complex to use because of their flexibility. The on-demand
+inheritance facility allows the programmer to suppose that some class diagram
+is associated to the object, and invoke primitives on it as if this diagram
+really exists. EDMA builds the diagram at run-time, when needed. The programmer
+needs to specify a class path, that is a filesystem-like path with name
+of the classes related. For example, if you want to add the <TT>BLUR</TT>
+subclass to a <TT>LINEAR_FILTER</TT> object you can invoke any basic primitive
+(<TT>WProp3</TT>, <TT>RProp3</TT>, <TT>Met3</TT>,..) on it with the associated
+class path <TT>BLUR/propname</TT> or <TT>BLUR/metname</TT>. This will automatically
+add the <TT>BLUR</TT> subclass to the <TT>LINEAR_FILTER</TT> class.
+
+<P>This interface will probably change in the next version, because it
+is not clear whether you are adding a subclass or a superclass to the object.
+We may use the <TT>&lt;</TT> and <TT>></TT> characters to indicate whether
+we are going up or down in the class diagram; we hope to get this change
+working soon and to maintain compatibility with the <TT>/</TT> interface.</DL>
+There are other object-related facilities in EDMA which we will not dicuss
+here. We hope to write a tutorial about these soon.
+
+<P><B>Extension Systems</B>
+
+<P>EDMA offers three main extension subsystems:
+
+<P>The <B>IngrIDF subsystem</B> allows you to add new parser interfaces
+for interface definition files. EDMA supports a native interface format
+named EDMAIDF, but in order to make EDMA work well with other systems we
+add the facility to define class interface files in other formats. The
+IngrIDF system provides a set of EDMA primitives for developing interface
+parsers. The IngrIDF parsers are EDMA classes that are used by EDMA itself
+in order to access class interface information in formats other than EDMAIDF.
+
+<P>The most complex example available of an IngrIDF parser is the <TT>JAVA_IDF</TT>
+class. This EDMA class is a parser for retrieving class interface information
+from Java bytecode and is part of the <B>JANE</B> system, a set of EDMA
+classes that allows you to use Java classes as if they were EDMA classes.
+
+<P>The interface format used for a class is defined in the class register,
+in the field <TT>IDFParser</TT>. Most classes use EDMAIDF, that is, the
+register entry for this classes is <TT>IDFParser=EDMAIDF</TT>, but you
+can develop new parsers as EDMA classes and indicate the class name in
+the IDFParser field. For example, a registered Java class on the system
+will show this entry: <TT>IDFParser=JAVA_IDF</TT>. This means that when
+EDMA needs to get interface information for that class it will use an instance
+of the class <TT>JAVA_IDF</TT> instead of the native code.
+
+<P>The IDF parsers are marked in the class register too. A field named
+<TT>IsIDFParser</TT> indicates that the class is an IDF parser if it contains
+the value 1, or not if it contains value 0 or is omitted.
+
+<P>Another important extension system in EDMA is the <B>SIU subsystem</B>.
+This allows you to use other implementation formats that dynamically link
+libraries. The SIU subsystem is based on PROXY objects; these are objects
+that represent an object outside of EDMA. For example, for a class implemented
+using Java bytecode, we must build a PROXY class that talks to the Java
+Virtual Machine to communicate with the real Java object, that takes the
+EDMA primitives and translates them into Java Virtual Machine calls.
+
+<P>There are two ways to use SIU: direct access and blind interface access.
+Direct access is used when the PROXY class for accessing some object is
+defined in the class register. For such a class, we will have an entry
+like <TT>SIUPROXY=MyProxyClass</TT>. When an object of a class declared
+with the direct access is created, EDMA creates an object of the related
+PROXY class, and redirects all calls to this object instead to the real
+object. Blind interface access allows to the programmer to select which
+PROXY to use for an object when it is created. To do that, you must specify
+the classname with the PROXY class name to use between parentheses. For
+example <TT>NewObj("(JAVAPROXY)MyFrame",NULL);</TT> will create a <TT>JAVAPROXY</TT>
+(this is a class name) object, and all the calls to the object returned
+will be redirected to this object, which will talk to the Java Virtual
+Machine.
+
+<P>The final extension system in EDMA is the <B>EMI subsystem</B>. This
+subsystem allows classes to be registered to manage internal EDMA exceptions.
+This is the least developed extension system and the only exception that
+it can manage is the so-called <TT>"CLASS NOT FOUND"</TT> exception. When
+a program tries to create an object of a class that isn't registered in
+the system, a <TT>CLASS NOT FOUND</TT> exception is launched. If a class
+is registered for managing this, EDMA will yield control to an instance
+of it and will let it try to resolve the problem.
+
+<P>We have developed a simple system that allows classes to be downloaded
+over a network connection and registered at run-time, to allow the application
+to perform object creation if a class doesn't exist.
+<BR>&nbsp;
+
+<P>
+<HR WIDTH="100%">
+<BR>Return to<A HREF="/software/edma/edma.html"> EDMA's home page</A>.
+<BR>Return to<A HREF="/home.html"> GNU's home page</A>.
+
+<P>Please send FSF &amp; GNU inquiries &amp; questions to <A HREF="mailto:gnu@gnu.org">gnu@gnu.org</A>.
+There are also other ways to contact
+<BR>the FSF.
+
+<P>Please send comments on these web pages to <A HREF="mailto:webmaster@www.gnu.org">webmasters@www.gnu.org</A>,
+send other questions to
+<BR><A HREF="mailto:gnu@gnu.org">gnu@gnu.org</A>.
+
+<P>Copyright (C) 1997, 1998 Free Software Foundation, Inc., 59 Temple Place
+- Suite 330, Boston, MA
+<BR>02111, USA
+
+<P>Verbatim copying and distribution is permitted in any medium, provided
+this notice is preserved.
+
+<P>Updated:
+<!-- hhmts start -->
+ 4 Dec 1998 jonas
+<!-- hhmts end -->
+<BR>
+<HR WIDTH="100%">
+</BODY>
+</HTML>
